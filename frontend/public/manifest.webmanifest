@@ -1,0 +1,37 @@
+{
+  "name": "Tripperz Travel Planner",
+  "short_name": "Tripperz",
+  "description": "Mobile-first travel planning PWA for itineraries, hotels, flights, and places.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Planning",
+      "short_name": "Plan",
+      "url": "/ai"
+    },
+    {
+      "name": "Hotels",
+      "short_name": "Hotels",
+      "url": "/hotels"
+    }
+  ]
+}
