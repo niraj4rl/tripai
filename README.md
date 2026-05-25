@@ -1,79 +1,114 @@
-# TripAI
+# Tripperz: AI Travel Planning and PWA Experience
 
-TripAI is a full-stack travel planning app with an AI-assisted itinerary generator, real data integrations, and a mobile-first PWA experience. This repository is a monorepo with a React frontend and a FastAPI backend.
+Tripperz is a modern, full-stack travel planning platform designed to help travelers build realistic itineraries using live data and AI. It combines FastAPI, multiple travel data providers, and a mobile-first React PWA to deliver actionable trip plans for individuals and groups.
+
+## Project Overview
+
+Tripperz analyzes trip preferences (budget, pace, dates, interests) and combines live travel data to:
+
+- Generate structured day-by-day itineraries with AI
+- Validate budgets with real-world pricing signals
+- Surface flights, hotels, and attractions from live providers
+- Visualize trips in a clean, installable PWA experience
+
+The platform is built for extensibility and supports multiple providers with graceful fallbacks.
 
 ## Features
 
 - AI-assisted trip planning with structured itineraries
-- Real data integrations for flights, hotels, places, and weather
-- Budget validation and cost breakdowns
-- JWT-based authentication and user profiles
-- PWA support with offline fallback and install prompt
+- Real flight, hotel, place, and weather integrations
+- Budget validation and trip cost breakdowns
+- JWT-based authentication with saved trips and profiles
+- Mobile-first PWA with offline shell and install support
+- Search, compare, and export trip plans
 
 ## Tech Stack
+
+**Backend**
+- FastAPI (Python)
+- Uvicorn
+- SQLAlchemy + Pydantic
 
 **Frontend**
 - React + TypeScript
 - Vite
 - Tailwind CSS
-- React Router, TanStack Query, Zustand
+- TanStack Query, Zustand
 
-**Backend**
-- FastAPI
-- SQLAlchemy
-- PostgreSQL (or compatible)
-- Pydantic
+**AI**
+- OpenAI or Gemini
+
+## APIs Used
+
+- OpenAI API (AI itinerary generation)
+- Gemini API (AI itinerary generation)
+- TravelPayouts API (flights)
+- Hotelbeds API (hotels)
+- Foursquare Places API (places)
+- OpenWeather API (weather + geocoding)
+- OpenStreetMap Nominatim (geocoding fallback, keyless)
+- MapTiler API (frontend maps + geocoding)
+- Skyscanner API (optional)
+
+## Architecture
+
+```
+┌────────────┐      REST API     ┌──────────────┐      ┌──────────────┐
+│  Frontend  │ <───────────────> │   FastAPI    │ <───>│  Travel APIs │
+│  (React)   │                   │   Backend    │      │  + AI APIs   │
+└────────────┘                   └──────────────┘      └──────────────┘
+```
 
 ## Repository Structure
 
 ```
-tripai/
+tripperz/
 ├── frontend/            # React PWA
 ├── backend/             # FastAPI app
 ├── docs/                # Project docs
 └── README.md
 ```
 
-## Prerequisites
+## Getting Started (Local Development)
 
-- Node.js 18+
-- Python 3.11+
-- PostgreSQL (optional; can use a hosted DB)
-
-## Quick Start
-
-### 1) Backend
+1. Clone the repository
+2. Create and activate a Python virtual environment
+3. Install backend dependencies:
 
 ```bash
-cd backend
-python -m venv .venv
-.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-copy .env.example .env
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-API docs: http://localhost:8000/docs
-
-### 2) Frontend
+4. Copy `.env.example` to `.env` and add your API keys (see docs)
+5. Build the frontend:
 
 ```bash
-cd frontend
-copy .env.example .env
 npm install
+npm run build
+```
+
+6. Start the backend server:
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+7. Start the frontend (for development):
+
+```bash
 npm run dev
 ```
 
-App: http://127.0.0.1:5173
+8. Open http://localhost:5173 in your browser
 
-## Environment Variables
+## Core API Endpoints
 
-Copy `.env.example` to `.env` in both `frontend/` and `backend/` and set the keys you need. Common integrations:
-
-- Google Maps / Places
-- Amadeus (flights and hotels)
-- OpenWeather
-- AI provider (OpenAI/Gemini)
+- `POST /api/ai/trip-plan` - Generate itinerary
+- `POST /api/ai/budget-check` - Validate budget
+- `GET /api/flights/search` - Search flights
+- `GET /api/hotels/search` - Search hotels
+- `GET /api/places/search` - Search places
+- `GET /api/weather/forecast` - Weather forecast
 
 ## Docs
 
@@ -81,18 +116,10 @@ Copy `.env.example` to `.env` in both `frontend/` and `backend/` and set the key
 - [docs/SETUP.md](docs/SETUP.md)
 - [docs/API_REFERENCE.md](docs/API_REFERENCE.md)
 
-## Testing (Backend)
+## Deployment
 
-```bash
-cd backend
-pytest
-```
-
-## Deployment Notes
-
-- Frontend: build with `npm run build`
-- Backend: run with `uvicorn app.main:app --host 0.0.0.0 --port 10000`
+This project is currently in local development. For deployment steps, see the docs folder.
 
 ## License
 
-MIT
+MIT License
