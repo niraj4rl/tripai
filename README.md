@@ -69,6 +69,10 @@ tripperz/
 └── README.md
 ```
 
+## UI
+<img width="541" height="848" alt="Screenshot 2026-05-25 124911" src="https://github.com/user-attachments/assets/9922f255-3e85-46dd-8337-419ed3090ce7" />
+
+
 ## Getting Started (Local Development)
 
 1. Clone the repository
