@@ -70,7 +70,7 @@ tripperz/
 ```
 
 ## UI
-<img width="150" height="400" alt="Screenshot 2026-05-25 124911" src="https://github.com/user-attachments/assets/9922f255-3e85-46dd-8337-419ed3090ce7" />
+<img width="230" height="400" alt="Screenshot 2026-05-25 124911" src="https://github.com/user-attachments/assets/9922f255-3e85-46dd-8337-419ed3090ce7" />
 
 
 ## Getting Started (Local Development)
