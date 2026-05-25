@@ -70,7 +70,18 @@ tripperz/
 ```
 
 ## UI
+<img width="230" height="400" alt="Screenshot 2026-05-25 124810" src="https://github.com/user-attachments/assets/c32bf540-7415-4250-991f-8ab4539cb300" />
+
+<img width="230" height="400" alt="Screenshot 2026-05-25 124852" src="https://github.com/user-attachments/assets/910aa5f0-9326-40f5-aadc-4492365e83dd" />
+
 <img width="230" height="400" alt="Screenshot 2026-05-25 124911" src="https://github.com/user-attachments/assets/9922f255-3e85-46dd-8337-419ed3090ce7" />
+
+<img width="230" height="400" alt="Screenshot 2026-05-25 124923" src="https://github.com/user-attachments/assets/de8813c3-0116-44b3-a61b-82547531c509" />
+
+<img width="230" height="400" alt="Screenshot 2026-05-25 124935" src="https://github.com/user-attachments/assets/7225f5e9-f50b-4edc-b766-71ec52beb68f" />
+
+<img width="230" height="400" alt="Screenshot 2026-05-25 124951" src="https://github.com/user-attachments/assets/b4368661-5662-49cb-8a5a-4f2dc2c6577b" />
+
 
 
 ## Getting Started (Local Development)
